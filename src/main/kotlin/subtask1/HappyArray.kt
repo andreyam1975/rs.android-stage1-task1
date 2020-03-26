@@ -1,5 +1,7 @@
 package subtask1
 
+import services.Utils
+
 class HappyArray {
 
     fun convertToHappy(sadArray: IntArray): IntArray {
@@ -10,7 +12,7 @@ class HappyArray {
 
         var intArray = sadArray.copyOf()
 
-        printArray("sadArray", sadArray)
+        Utils.printArray("sadArray", sadArray)
 
         while (!isArrayHappy(intArray)) {
 
@@ -26,7 +28,7 @@ class HappyArray {
             intArray = happyNumbers.toIntArray()
         }
 
-        printArray("happyArray", intArray)
+        Utils.printArray("happyArray", intArray)
 
         return intArray
     }
@@ -40,14 +42,5 @@ class HappyArray {
         }
 
         return true
-    }
-
-    private fun printArray(arrayName: String, array: IntArray) {
-        print("$arrayName : [")
-        for (i in 0 until array.size - 1) {
-            print("${array[i]}, ")
-        }
-        print("${array[array.size - 1]}]")
-        println()
     }
 }
