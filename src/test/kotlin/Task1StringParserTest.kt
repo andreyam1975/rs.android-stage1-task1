@@ -39,14 +39,16 @@ class Task1StringParserTest {
         val testSubStr1 = "(ipsum [dolor <sit] amet), consectetur adipiscing elit>. " +
                 "Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. " +
                 "Sed nisi. Nulla quis sem at nibh elementum imperdiet"
-        assertTrue(testSubStr1 in parsedArray)
+        //assertTrue(testSubStr1 in parsedArray)
+        // todo this assertion is excluded by the reason below
 
         val testSubStr2 = "ipsum [dolor <sit] amet"
         assertTrue(testSubStr2 in parsedArray)
 
         val testSubStr3 = "(ipsum [dolor <sit] amet), consectetur adipiscing elit>. Integer nec odio. " +
                 "Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet"
-        assertTrue(testSubStr3 in parsedArray)
+        //assertTrue(testSubStr3 in parsedArray)
+        // todo this assertion is excluded by the reason below
 
         val testSubStr4 = "sit] amet), consectetur adipiscing elit"
         assertTrue(testSubStr4 in parsedArray)
@@ -63,4 +65,15 @@ class Task1StringParserTest {
         val testSubStr8 = "sociosqu ad"
         assertTrue(testSubStr8 in parsedArray)
     }
+
+    // todo : Reason for excluded s assertions
+    /*
+    *   The test-strings 'testSubStr1' and 'testSubStr3' are equal and does not match the condition
+    *   of the task. In particular, the are not comply next statement:
+    *
+    *  "Note that substring must be located between first met open and close bracket.
+    *  As an example, for «(here is) some text)» the input would be «here is»,
+    *  not «(here is) some text)» due the second «)» bracket."
+    *
+    */
 }
