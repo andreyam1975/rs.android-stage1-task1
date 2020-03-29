@@ -4,6 +4,10 @@ import services.Utils
 
 class HappyArray {
 
+    /**
+     * returns array of 'good' digits; An array of integers is "sad" while it contains 'bad' elements.
+     * Element of a [sadArray] is 'bad' if the sum of nearest elements is less than its value.
+     */
     fun convertToHappy(sadArray: IntArray): IntArray {
 
         if (sadArray.isEmpty()) {

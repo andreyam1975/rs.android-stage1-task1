@@ -4,6 +4,9 @@ import services.Utils
 
 class MiniMaxSum {
 
+    /**
+     * returns array contains two values: minimum sum of elements of [input] and maximum sum of them
+     */
     fun getResult(input: IntArray): IntArray {
 
         Utils.printArray("inputArray", input)
@@ -29,6 +32,8 @@ class MiniMaxSum {
         res[1] = sumOfMax
 
         Utils.printArray("resultArray", res)
+
+        println("${res[0]} ${res[1]}")
 
         return res
     }
